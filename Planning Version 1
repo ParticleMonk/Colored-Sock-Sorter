@@ -1,0 +1,25 @@
+____Problem Statement___
+Randomly generate a set of different colored socks. (Statement 1) 
+Show them on screen. (Statement 2)
+Then have the user click a button and run a script that sorts and matches them. (Statement 3) 
+
+
+
+__Statement 1__ 
+
+Create two list(right foot/left foot)of chars(R,G,B,Y,W) representing color.
+Create a Dict Mapping each color to a number. 
+Use a random number generator to create a random combination of sock colors. 
+Duplicate that list and randomize it. 
+
+__Statement 2__
+
+Use PyQt to show a series of sock pairs corresponding to the chars in each list(right foot/left foot).**This should be the socks in the unordered sort**
+-Using a loop with incrementation in combination with a switch like method. 
+--for each char in right foot print an image corrosponding to the rightfoot sock color and another image corresponding to the left foot sock color. **To be displayed simultanesouly**
+
+__Statement 3__
+
+Use PyQt to display a button labeled "sort" 
+Once the button has been pressed for loop with comparison to each other that creates a new left foot list that is sorted. 
+Then using PyQt and the solution for statement 2 reshow the sorted list of socks. 
