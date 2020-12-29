@@ -1,0 +1,21 @@
+import random
+
+colors = {
+  1: "Blue",
+  2: "Yellow",
+  3: "White",
+  4: "Red",
+  5: "Green",
+}
+
+
+list_size = random.randrange(6)
+i = 0
+left_list = []
+right_list = []
+while i < list_size:
+    temp_num = random.randrange(6)
+    left_list.append(temp_num)
+    right_list.append(temp_num)
+    i += 1
+random.shuffle(right_list)
