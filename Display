@@ -1,0 +1,33 @@
+###
+Use PyQt to show a series of sock pairs corresponding to the chars in each list(right foot/left foot).**This should be the socks in the unordered sort**
+-Using a loop with incrementation in combination with a switch like method. 
+--for each char in right foot print an image corrosponding to the rightfoot sock color and another image corresponding to the left foot sock color. **To be displayed simultanesouly**
+###
+
+import os
+from PyQt4 import QtCore, QtGui
+
+class MainWindow(QtGui.QMainWindow):
+    def __init__(self, parent=None):
+        super(MainWindow, self).__init__(parent)
+        url = # ...
+        highlight_dir = url + '\\highlighted'
+
+        self.scrollArea = QtGui.QScrollArea(widgetResizable=True)
+        self.setCentralWidget(self.scrollArea)
+        content_widget = QtGui.QWidget()
+        self.scrollArea.setWidget(content_widget)
+        lay = QtGui.QVBoxLayout(content_widget)
+
+        for file in os.listdir(highlight_dir):
+            pixmap = QtGui.QPixmap(os.path.join(highlight_dir, file))
+            if not pixmap.isNull():
+                label = QtGui.QLabel(pixmap=pixmap)
+                lay.addWidget(label)
+
+if __name__ == '__main__':
+    import sys
+    app = QtGui.QApplication(sys.argv)
+    w = MainWindow()
+    w.show()
+    sys.exit(app.exec_())
